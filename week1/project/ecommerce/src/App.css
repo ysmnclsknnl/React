@@ -4,7 +4,7 @@
   --clr-white: #fff;
   --clr-primary: #282c34;
   --clr-black: #222;
-  --clr-dark-grey: #928b8b;
+  --clr-dark-grey: #7f8b8f;
   --ff-primary: "Open Sans", sans-serif;
   --spacing: 0.25rem;
   --radius: 0.5vw;
@@ -63,6 +63,7 @@ button {
   width: 10rem;
   font-size: 0.85rem;
   margin-left: 0.5rem;
+  border: solid 2px var(--clr-primary);
   border-bottom-left-radius: var(--radius);
 }
 button.clicked {
