@@ -7,8 +7,6 @@ const PersonController = () => {
   const [person, setPerson] = useState(null);
   const [people, setPeople] = useState([]);
 
-  console.log("person controller rendered");
-
   useEffect(() => {
     getPerson();
     getPeople(10);

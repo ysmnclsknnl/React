@@ -1,7 +1,6 @@
 import React from "react";
 
 const Person = ({ person }) => {
-  console.log("person rendered");
   const { name, lastName, email, phoneNumber } = person;
   return (
     <>
