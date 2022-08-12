@@ -7,6 +7,8 @@ const PersonController = () => {
   const [person, setPerson] = useState(null);
   const [people, setPeople] = useState([]);
 
+  console.log("person controller rendered");
+
   useEffect(() => {
     getPerson();
     getPeople(10);
@@ -20,6 +22,7 @@ const PersonController = () => {
         name: result.name.first,
         lastName: result.name.last,
         email: result.email,
+        phoneNumber: result.phone,
       };
     });
     return newPeople;
@@ -49,6 +52,7 @@ const PersonController = () => {
       >
         Get Random Person
       </button>
+
       <ul>{person && <Person person={person} />}</ul>
       <div>
         {people.length > 0 &&
