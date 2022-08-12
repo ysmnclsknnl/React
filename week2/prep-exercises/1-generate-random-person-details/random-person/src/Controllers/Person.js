@@ -1,12 +1,12 @@
 import React from "react";
 
 const Person = ({ person }) => {
-  const { name, surname, email } = person;
+  const { name, lastName, email } = person;
   return (
     <>
-      <li>{name}</li>
-      <li>{surname}</li>
-      <li>{email}</li>
+      <li>Name: {name}</li>
+      <li>Surname: {lastName}</li>
+      <li>E-mail: {email}</li>
     </>
   );
 };

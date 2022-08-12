@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  line-height: 2.5em;
 }
 
 .App-header {
@@ -13,6 +14,13 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  background-color: #61dafb;
+  height: 3rem;
+  width: 10rem;
+}
+li {
+  list-style: none;
+  text-align: left;
+  font-family: cursive;
 }
