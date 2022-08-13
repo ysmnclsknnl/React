@@ -1,16 +1,14 @@
 import "./App.css";
 import { useState } from "react";
-import allCategories from "./fake-data/all-categories";
+
 import CategoryList from "./components/CategoryList";
 import ProductList from "./components/ProductList";
 
 function App() {
-  const [categories, setCategories] = useState(allCategories);
-  const [catClicked, setCatClicked] = useState("");
+  const [selectedCat, setSelectedCat] = useState("");
 
   const onCategoryChange = (categoryName) => {
-    setCategories([categoryName]);
-    setCatClicked(categoryName);
+    setSelectedCat(categoryName);
   };
 
   return (
@@ -21,10 +19,9 @@ function App() {
       <main>
         <CategoryList
           onCategoryChange={onCategoryChange}
-          selectedCategories={allCategories}
-          catClicked={catClicked}
+          selectedCategory={selectedCat}
         ></CategoryList>
-        <ProductList selectedCategories={categories}></ProductList>
+        <ProductList selectedCategory={selectedCat}></ProductList>
       </main>
     </div>
   );
