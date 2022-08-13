@@ -1,13 +1,13 @@
 import React from "react";
+import allCategories from "../fake-data/all-categories";
 import Category from "./Category";
-import { useState } from "react";
 
-const CategoryList = ({ selectedCategories, onCategoryChange, catClicked }) => {
+const CategoryList = ({ selectedCategory, onCategoryChange }) => {
   return (
     <nav>
-      {selectedCategories.map((category, index) => (
+      {allCategories.map((category, index) => (
         <Category
-          catClicked={catClicked}
+          catClicked={category === selectedCategory}
           onChange={onCategoryChange}
           key={index}
           text={category}

@@ -2,18 +2,15 @@ import React from "react";
 import Product from "./Product";
 import allProducts from "../fake-data/all-products";
 
-const ProductList = ({ selectedCategories }) => {
-  const selectedProducts = allProducts.filter((product) =>
-    selectedCategories.includes(product.category)
-  );
+const ProductList = ({ selectedCategory }) => {
+  const selectedProducts =
+    selectedCategory === ""
+      ? allProducts
+      : allProducts.filter(({ category }) => category === selectedCategory);
   return (
     <div className="container">
-      {selectedProducts.map((product, index) => (
-        <Product
-          key={index}
-          title={product.title}
-          image={product.image}
-        ></Product>
+      {selectedProducts.map(({ id, title, image }) => (
+        <Product key={id} title={title} image={image}></Product>
       ))}
     </div>
   );
