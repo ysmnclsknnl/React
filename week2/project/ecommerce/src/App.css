@@ -39,7 +39,7 @@ body {
   width: 100%;
   margin: 0 auto;
   height: 10vh;
-  font-size: calc(10px + 2vmin);
+  font-size: 3vh;
   color: white;
 }
 
@@ -76,14 +76,25 @@ button:hover {
   box-shadow: var(--light-shadow);
   color: white;
 }
-.container {
-  max-width: 100%;
-  margin: 2vh auto;
+
+.flex-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  max-width: 100%;
+  margin: 2vh auto;
+  padding: 1vw 1vh;
+  align-items: center;
+}
+
 .card {
   width: 400px;
   height: 400px;
@@ -105,6 +116,28 @@ button:hover {
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
+.product-detail {
+  margin-top: 2vh;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.product-detail img {
+  max-width: 80%;
+  margin-top: var(--margin);
+}
+.description {
+  max-width: 80%;
+}
+.text-center {
+  text-align: center;
+}
+
+.loading {
+  font-size: 2rem;
+}
 @media only screen and (min-width: 600px) {
   .App-header h1 {
     text-align: left;
@@ -113,5 +146,13 @@ button:hover {
 
   main nav {
     margin: 0 2vw;
+  }
+
+  .product-detail img {
+    max-width: 40%;
+  }
+  .description {
+    max-width: 40%;
+    margin-right: 5%;
   }
 }
