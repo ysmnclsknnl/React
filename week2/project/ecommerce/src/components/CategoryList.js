@@ -29,7 +29,7 @@ const CategoryList = ({ selectedCategory, onCategoryChange }) => {
   }, []);
 
   if (error) {
-    return <Error text="Categories can be loaded" />;
+    return <Error text="Categories can not be loaded" />;
   }
 
   return (
