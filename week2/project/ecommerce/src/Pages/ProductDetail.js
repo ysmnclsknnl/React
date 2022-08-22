@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import fetchData from "../helpers/fetchData";
+import { useParams } from "react-router-dom";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
 import API_URL from "../constants";
@@ -13,22 +13,11 @@ const ProductDetail = () => {
   const [error, setError] = useState(false);
 
   const { productId } = useParams();
-
-  const getProduct = async () => {
-    const productData = await fetchData(`${API_URL}/${productId}`);
-
-    if (!productData) {
-      setLoading(false);
-      setError(true);
-      return;
-    }
-    setLoading(false);
-    setProduct(productData);
-  };
+  const productUrl = `${API_URL}/${productId}`;
 
   useEffect(() => {
-    getProduct();
-  }, []);
+    fetchData(productUrl, setProduct, setLoading, setError);
+  }, [productUrl]);
 
   if (error) {
     return <Error text="Product Details can not be loaded" />;
