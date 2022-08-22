@@ -36,14 +36,12 @@ const ProductDetail = () => {
 
   return (
     <div className="container flex-column">
-      {loading && <Loading />}{" "}
+      {loading && <Loading />}
       {product && (
         <>
           <h2 className="text-center">{product.title}</h2>
           <div className="product-detail flex-row">
-            {" "}
             <div className="description">
-              {" "}
               <p> {product.description}</p>
             </div>
             <img src={product.image} alt={product.title}></img>
