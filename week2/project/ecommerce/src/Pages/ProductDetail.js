@@ -22,7 +22,6 @@ const ProductDetail = () => {
   if (error) {
     return <Error text="Product Details can not be loaded" />;
   }
-
   return (
     <div className="container flex-column">
       {loading && <Loading />}
