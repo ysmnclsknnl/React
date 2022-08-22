@@ -19,8 +19,8 @@ const Home = () => {
         <CategoryList
           onCategoryChange={onCategoryChange}
           selectedCategory={selectedCat}
-        ></CategoryList>
-        <ProductList selectedCat={selectedCat}></ProductList>
+        />
+        <ProductList selectedCat={selectedCat} />
       </main>
     </div>
   );
