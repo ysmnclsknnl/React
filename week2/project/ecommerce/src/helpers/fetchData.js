@@ -1,15 +1,13 @@
-const fetchData = async (url) => {
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    console.log(`response is${res}`);
-    return;
-  }
+const fetchData = async (url, setData, setLoading, setError) => {
   try {
+    const res = await fetch(url);
     const data = await res.json();
-    return data;
+    setData(data);
+    setError(false);
   } catch (er) {
-    return;
+    setError(true);
+  } finally {
+    setLoading(false);
   }
 };
 
