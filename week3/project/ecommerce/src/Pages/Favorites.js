@@ -1,7 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "../GlobalContext";
 
-import FavoriteProducts from "../components/FavoriteProducts";
+import FavoriteProduct from "../components/FavoriteProduct";
 
 const Favorites = () => {
   const { favorites } = useGlobalContext();
@@ -14,9 +14,9 @@ const Favorites = () => {
     );
   }
   return (
-    <div>
+    <div className="container flex-row">
       {favorites.map((productId) => (
-        <FavoriteProducts key={productId} id={productId} />
+        <FavoriteProduct key={productId} id={productId} />
       ))}
     </div>
   );

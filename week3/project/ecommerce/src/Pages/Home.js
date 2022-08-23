@@ -13,11 +13,15 @@ const Home = () => {
 
   return (
     <div className="App">
-      <header className="App-header flex-row">
+      <header className="App-header">
         <h1>Products</h1>
         <nav>
-          <NavLink to="/">Products</NavLink>
-          <NavLink to="/favorites">Favorites</NavLink>
+          <NavLink className="nav-link" to="/">
+            Products
+          </NavLink>
+          <NavLink className="nav-link" to="/favorites">
+            Favorites
+          </NavLink>
         </nav>
       </header>
       <main>

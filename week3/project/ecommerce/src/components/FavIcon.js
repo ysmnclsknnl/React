@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import heartRegular from "../assets/heart-regular.svg";
 import heartSolid from "../assets/heart-solid.svg";
 import { useGlobalContext } from "../GlobalContext";
@@ -13,14 +12,6 @@ const FavIcon = ({ id }) => {
       removeFavorites(id);
     }
   };
-
-  // useEffect(() => {
-  //   if (favorite) {
-  //     addFavorites(id);
-  //   } else {
-  //     removeFavorites(id);
-  //   }
-  // }, [favorite]);
 
   return (
     <img

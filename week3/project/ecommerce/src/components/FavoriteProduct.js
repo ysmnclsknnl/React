@@ -6,13 +6,12 @@ import Loading from "./Loading";
 import FavIcon from "./FavIcon";
 import { Link } from "react-router-dom";
 
-const FavoriteProducts = ({ id }) => {
+const FavoriteProduct = ({ id }) => {
   const productUrl = `${API_URL}/${id}`;
-  console.log(`${id} is and ${productUrl}`);
   const { loading, error, data: product } = useFetch(productUrl);
 
   if (error) {
-    return <Error text="Products can not be loaded" />;
+    return <Error text="Product can not be loaded" />;
   }
   if (loading) {
     return <Loading />;
@@ -21,11 +20,11 @@ const FavoriteProducts = ({ id }) => {
     <div className="card">
       <FavIcon id={id} />
       <img src={product.image} alt={product.title}></img>
-      <Link to={`../product/${id}`}>
+      <Link className="product-link" to={`../product/${id}`}>
         <p>{product.title}</p>
       </Link>
     </div>
   );
 };
 
-export default FavoriteProducts;
+export default FavoriteProduct;
