@@ -6,8 +6,6 @@ import API_URL from "../constants";
 import { useFetch } from "../hooks/useFetch";
 
 const ProductList = ({ selectedCat }) => {
-  console.log("rendered");
-
   const productUrl =
     selectedCat === "" ? API_URL : `${API_URL}/category/${selectedCat}`;
 

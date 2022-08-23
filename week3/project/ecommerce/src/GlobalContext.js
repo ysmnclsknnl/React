@@ -5,7 +5,6 @@ export const useGlobalContext = () => useContext(GlobalContext);
 
 export const GlobalProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
-  console.log(favorites);
   const addFavorites = (id) => {
     setFavorites([...favorites, id]);
   };
