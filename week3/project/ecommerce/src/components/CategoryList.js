@@ -4,16 +4,15 @@ import Category from "./Category";
 import Error from "./Error";
 import Loading from "./Loading";
 import API_URL from "../constants";
-import fetchData from "../helpers/fetchData";
+
+import { useFetch } from "../hooks/useFetch";
 
 const CategoryList = ({ selectedCategory, onCategoryChange }) => {
-  const [allCategories, SetAllCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    fetchData(`${API_URL}/categories`, SetAllCategories, setLoading, setError);
-  }, []);
+  const {
+    loading,
+    error,
+    data: allCategories,
+  } = useFetch(`${API_URL}/categories`);
 
   if (error) {
     return <Error text="Categories can not be loaded" />;

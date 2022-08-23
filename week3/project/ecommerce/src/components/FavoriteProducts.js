@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const FavoriteProducts = ({ id }) => {
   const productUrl = `${API_URL}/${id}`;
   console.log(`${id} is and ${productUrl}`);
-  const { loading, error, data } = useFetch(productUrl);
+  const { loading, error, data: product } = useFetch(productUrl);
 
   if (error) {
     return <Error text="Products can not be loaded" />;
@@ -19,9 +19,10 @@ const FavoriteProducts = ({ id }) => {
   }
   return (
     <div className="card">
-      <img src={data.image} alt={data.title}></img>
+      <FavIcon id={id} />
+      <img src={product.image} alt={product.title}></img>
       <Link to={`../product/${id}`}>
-        <p>{data.title}</p>
+        <p>{product.title}</p>
       </Link>
     </div>
   );

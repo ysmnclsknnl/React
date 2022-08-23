@@ -5,20 +5,27 @@ import { useGlobalContext } from "../GlobalContext";
 
 const FavIcon = ({ id }) => {
   const { addFavorites, removeFavorites, isFavorite } = useGlobalContext();
-  const [favorite, setFavorite] = useState(() => isFavorite(id));
 
-  useEffect(() => {
-    if (favorite) {
+  const handleFavorite = (id) => {
+    if (!isFavorite(id)) {
       addFavorites(id);
     } else {
       removeFavorites(id);
     }
-  }, [favorite]);
+  };
+
+  // useEffect(() => {
+  //   if (favorite) {
+  //     addFavorites(id);
+  //   } else {
+  //     removeFavorites(id);
+  //   }
+  // }, [favorite]);
 
   return (
     <img
-      src={favorite ? heartSolid : heartRegular}
-      onClick={() => setFavorite(!favorite)}
+      src={isFavorite(id) ? heartSolid : heartRegular}
+      onClick={() => handleFavorite(id)}
       className="fav-icon"
       alt="fav-icon"
     ></img>
