@@ -1,3 +1,3 @@
 # Ecommerce WebSite
 
-Deployed site  <a href='https://yasemin-caliskan-week2-edited.netlify.app'>link is</a>
+Deployed site  <a href='https://ecommerce-week3-yasemin.netlify.app'>link is</a>
