@@ -13,9 +13,17 @@ export const GlobalProvider = ({ children }) => {
     setFavorites(favorites.filter((item) => item !== id));
   };
 
+  const isFavorite = (id) => favorites.includes(id);
+
   return (
     <GlobalContext.Provider
-      value={{ favorites, setFavorites, addFavorites, removeFavorites }}
+      value={{
+        favorites,
+        setFavorites,
+        addFavorites,
+        removeFavorites,
+        isFavorite,
+      }}
     >
       {children}
     </GlobalContext.Provider>

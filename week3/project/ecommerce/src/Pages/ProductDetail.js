@@ -1,6 +1,8 @@
 import React from "react";
 import "../App.css";
 import { useState, useEffect } from "react";
+import FavIcon from "../components/FavIcon";
+
 import fetchData from "../helpers/fetchData";
 import { useParams } from "react-router-dom";
 import Error from "../components/Error";
@@ -27,7 +29,12 @@ const ProductDetail = () => {
       {loading && <Loading />}
       {product && (
         <>
-          <h2 className="text-center">{product.title}</h2>
+          <div>
+            {" "}
+            <h2 className="text-center">{product.title}</h2>
+            <FavIcon id={parseInt(productId)} />
+          </div>
+
           <div className="product-detail flex-row">
             <div className="description">
               <p> {product.description}</p>

@@ -4,8 +4,8 @@ import heartSolid from "../assets/heart-solid.svg";
 import { useGlobalContext } from "../GlobalContext";
 
 const FavIcon = ({ id }) => {
-  const [favorite, setFavorite] = useState(false);
-  const { addFavorites, removeFavorites } = useGlobalContext();
+  const { addFavorites, removeFavorites, isFavorite } = useGlobalContext();
+  const [favorite, setFavorite] = useState(() => isFavorite(id));
 
   useEffect(() => {
     if (favorite) {
