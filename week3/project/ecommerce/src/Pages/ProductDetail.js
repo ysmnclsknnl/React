@@ -1,25 +1,17 @@
 import React from "react";
 import "../App.css";
-import { useState, useEffect } from "react";
 import FavIcon from "../components/FavIcon";
-
-import fetchData from "../helpers/fetchData";
 import { useParams } from "react-router-dom";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
 import API_URL from "../constants";
+import { useFetch } from "../hooks/useFetch";
 
 const ProductDetail = () => {
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
   const { productId } = useParams();
   const productUrl = `${API_URL}/${productId}`;
 
-  useEffect(() => {
-    fetchData(productUrl, setProduct, setLoading, setError);
-  }, [productUrl]);
+  const { loading, error, data } = useFetch(productUrl);
 
   if (error) {
     return <Error text="Product Details can not be loaded" />;
@@ -27,19 +19,18 @@ const ProductDetail = () => {
   return (
     <div className="container flex-column">
       {loading && <Loading />}
-      {product && (
+      {data && (
         <>
           <div>
-            {" "}
-            <h2 className="text-center">{product.title}</h2>
+            <h2 className="text-center">{data.title}</h2>
             <FavIcon id={parseInt(productId)} />
           </div>
 
           <div className="product-detail flex-row">
             <div className="description">
-              <p> {product.description}</p>
+              <p> {data.description}</p>
             </div>
-            <img src={product.image} alt={product.title}></img>
+            <img src={data.image} alt={data.title}></img>
           </div>
         </>
       )}

@@ -5,18 +5,15 @@ import fetchData from "../helpers/fetchData";
 import Error from "./Error";
 import Loading from "./Loading";
 import API_URL from "../constants";
+import { useFetch } from "../hooks/useFetch";
 
 const ProductList = ({ selectedCat }) => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  console.log("rendered");
+
   const productUrl =
     selectedCat === "" ? API_URL : `${API_URL}/category/${selectedCat}`;
 
-  useEffect(() => {
-    fetchData(productUrl, setProducts, setLoading, setError);
-  }, [selectedCat]);
-
+  const { error, loading, data } = useFetch(productUrl);
   if (error) {
     return <Error text="Products can not be loaded" />;
   }
@@ -25,8 +22,8 @@ const ProductList = ({ selectedCat }) => {
   }
   return (
     <div className="container flex-row">
-      {products &&
-        products.map(({ id, title, image }) => (
+      {data &&
+        data.map(({ id, title, image }) => (
           <Product key={id} id={id} title={title} image={image}></Product>
         ))}
     </div>

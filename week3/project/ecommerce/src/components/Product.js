@@ -2,11 +2,8 @@ import React from "react";
 import "../App.css";
 import FavIcon from "./FavIcon";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../GlobalContext";
 
 const Product = ({ id, title, image }) => {
-  const { favorites, setFavorites } = useGlobalContext();
-
   return (
     <div className="card">
       <div>
