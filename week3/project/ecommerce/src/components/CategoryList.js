@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import Category from "./Category";
 import Error from "./Error";
 import Loading from "./Loading";
