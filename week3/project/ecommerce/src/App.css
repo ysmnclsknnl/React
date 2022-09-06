@@ -63,11 +63,13 @@ body {
   text-align: center;
   margin: auto 0;
 }
-header nav {
+.header-navlink-container {
   width: 80%;
+  max-width: 20rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-right: 2rem;
 }
 .nav-link {
   color: var(--clr-white);

@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <header className="App-header">
       <h1>Products</h1>
-      <nav>
+      <nav className="header-navlink-container">
         <NavLink className="nav-link" to="/">
           Products
         </NavLink>
