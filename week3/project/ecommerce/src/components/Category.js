@@ -4,7 +4,7 @@ const Category = ({ text, onChange, catClicked }) => {
   return (
     <button
       value={text}
-      className={catClicked ? "clicked" : ""}
+      className={`category-btn ${catClicked ? "clicked" : ""}`}
       onClick={(e) => {
         onChange(e.target.value);
       }}

@@ -88,7 +88,7 @@ nav.categories {
   margin: 0px;
 }
 
-button {
+.category-btn {
   background-color: white;
   color: var(--clr-primary);
   height: 3.5rem;
@@ -98,12 +98,12 @@ button {
   border: solid 2px var(--clr-primary);
   border-bottom-left-radius: var(--radius);
 }
-button.clicked {
+.clicked {
   background-color: var(--clr-primary);
   color: white;
 }
 
-button:hover {
+.category-btn:hover {
   background-color: var(--clr-dark-grey);
   box-shadow: var(--light-shadow);
   color: white;
@@ -130,7 +130,7 @@ button:hover {
   border: solid var(--clr-dark-grey) 1px;
 }
 
-.card img {
+.card .card-image {
   max-width: 80%;
   max-height: 70%;
 }
@@ -154,7 +154,7 @@ button:hover {
   text-align: left;
 }
 
-.product-detail img {
+.product-detail.product-detail-img {
   max-width: 80%;
   margin-top: var(--margin);
 }
@@ -177,18 +177,12 @@ button:hover {
     justify-content: space-between;
   }
 
-  .App-header h1 {
+  .logo-title {
     text-align: left;
     margin-left: 1%;
   }
-  header nav {
-    width: 20%;
-  }
-  main nav {
-    margin: 0 2vw;
-  }
 
-  .product-detail img {
+  .product-detail-img {
     max-width: 40%;
   }
   .description {

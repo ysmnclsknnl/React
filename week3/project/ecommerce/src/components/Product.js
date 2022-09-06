@@ -7,7 +7,7 @@ const Product = ({ id, title, image }) => {
   return (
     <div className="card">
       <FavIcon id={id} />
-      <img src={image} alt={title}></img>
+      <img src={image} alt={title} className="card-image"></img>
       <Link className="product-link" to={`product/${id}`}>
         {title}
       </Link>

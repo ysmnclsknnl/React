@@ -30,7 +30,11 @@ const ProductDetail = () => {
             <div className="description">
               <p> {data.description}</p>
             </div>
-            <img src={data.image} alt={data.title}></img>
+            <img
+              className="product-detail-img"
+              src={data.image}
+              alt={data.title}
+            ></img>
           </div>
         </>
       )}

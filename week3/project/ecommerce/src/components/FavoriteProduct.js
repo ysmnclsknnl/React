@@ -19,7 +19,7 @@ const FavoriteProduct = ({ id }) => {
   return (
     <div className="card">
       <FavIcon id={id} />
-      <img src={product.image} alt={product.title}></img>
+      <img src={product.image} alt={product.title} className="card-image"></img>
       <Link className="product-link" to={`../product/${id}`}>
         <p>{product.title}</p>
       </Link>
